@@ -82,7 +82,7 @@ export class StakeService {
 
     const metaplex = new Metaplex(connection);
     const umi = createUmi('https://fabled-magical-panorama.solana-mainnet.discover.quiknode.pro/2af224eaab7cf91c93d2aa1a62b0d8cea5b3d33e/')
-    ///@ts-expect-error - This is a valid base58 encoded string
+    ///@ts-ignore - This is a valid base58 encoded string
     const myNfts = await fetchAllDigitalAssetByOwner(umi, wallet);
 
     const filteredNfts = myNfts.filter((nft: any) => {
@@ -126,7 +126,7 @@ export class StakeService {
           in: nftsToStake,
         },
         owner: {
-          ///@ts-expect-error - This is a valid base58 encoded string
+          ///@ts-ignore - This is a valid base58 encoded string
           notIn: wallet,
         },
         isStaked: true,
@@ -156,7 +156,7 @@ export class StakeService {
     // pegar nfts da wallet
     const metaplex = new Metaplex(connection);
     const umi = createUmi('https://fabled-magical-panorama.solana-mainnet.discover.quiknode.pro/2af224eaab7cf91c93d2aa1a62b0d8cea5b3d33e/')
-    ///@ts-expect-error - This is a valid base58 encoded string
+    ///@ts-ignore - This is a valid base58 encoded string
     const myNfts = await fetchAllDigitalAssetByOwner(umi, wallet);
 
     const filteredNfts = myNfts.filter((nft: any) =>
@@ -233,7 +233,7 @@ export class StakeService {
 
     const metaplex = new Metaplex(connection);
     const umi = createUmi('https://fabled-magical-panorama.solana-mainnet.discover.quiknode.pro/2af224eaab7cf91c93d2aa1a62b0d8cea5b3d33e/')
-    ///@ts-expect-error - This is a valid base58 encoded string
+    ///@ts-ignore - This is a valid base58 encoded string
     const myNfts = await fetchAllDigitalAssetByOwner(umi, wallet);
 
     const filteredNfts = myNfts.filter((nft: any) =>
@@ -292,7 +292,7 @@ export class StakeService {
 
       const metaplex = new Metaplex(connection);
       const umi = createUmi('https://fabled-magical-panorama.solana-mainnet.discover.quiknode.pro/2af224eaab7cf91c93d2aa1a62b0d8cea5b3d33e/')
-      ///@ts-expect-error - This is a valid base58 encoded string
+      ///@ts-ignore - This is a valid base58 encoded string
       const myNfts = await fetchAllDigitalAssetByOwner(umi, wallet);
       const filteredNfts = myNfts
         .map((nft: any) => nft.mintAddress.toString())
@@ -327,7 +327,7 @@ export class StakeService {
       const transaction = Transaction.from(txbuffer.data);
 
       const keypair = Keypair.fromSecretKey(
-        ///@ts-expect-error - This is a valid base58 encoded string
+        ///@ts-ignore - This is a valid base58 encoded string
         bs58.decode(process.env.PK as string),
       );
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment

@@ -21,7 +21,7 @@ export class StakeMiddleware implements NestMiddleware {
     const publicKey = new PublicKey(wallet);
 
     if (!isLedger) {
-      ///@ts-expect-error - This is a valid base58 encoded string
+      ///@ts-ignore - This is a valid base58 encoded string
       const signMessageArray = new Uint8Array(bs58.decode(signature));
       if (
         !sign.detached.verify(
