@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+model Stake {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  nftAddress String
+  color      Color
+  owner      String
+  isStaked   Boolean  @default(false)
+  stakedAt   DateTime @default(now())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model User {
+  id      String    @id @default(auto()) @map("_id") @db.ObjectId
+  wallet  String    @unique
+  balance Int
+}
+
+enum Color {
+  BLACK
+  RAINBOW
+  GREEN
+  CAMOUFLAGE
+  WHITE
+  BLUE
+  ORANGE
+  ORIGINAL
+}
